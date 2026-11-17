@@ -49,7 +49,7 @@ class StudentsPage extends StatelessWidget {
         label: const Text('Add Student'),
       ),
       body: StreamBuilder(
-        stream: collection.snapshots(),
+        stream: collection.orderBy('fullName').snapshots(),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
             return const Center(child: Text('Unable to load students.'));
