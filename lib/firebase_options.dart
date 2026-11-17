@@ -57,7 +57,6 @@ class DefaultFirebaseOptions {
     projectId: 'student-information-app-e8581',
     storageBucket: 'student-information-app-e8581.firebasestorage.app',
   );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDeu8EM5HrtY-RT8i7r2j1e8JPORaCi1rk',
     appId: '1:874703993617:ios:aefa0a671f5bc53e242ab0',
@@ -66,7 +65,6 @@ class DefaultFirebaseOptions {
     storageBucket: 'student-information-app-e8581.firebasestorage.app',
     iosBundleId: 'com.example.studentInformationApp',
   );
-
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyDeu8EM5HrtY-RT8i7r2j1e8JPORaCi1rk',
     appId: '1:874703993617:ios:aefa0a671f5bc53e242ab0',
