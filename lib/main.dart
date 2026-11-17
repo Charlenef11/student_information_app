@@ -1,10 +1,8 @@
-
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:student_information_app/pages/main_navigation.dart';
 import 'firebase_options.dart';
-import 'pages/dashboard_page.dart';
 import 'pages/login_page.dart';
 
 Future<void> main() async {
@@ -29,7 +27,7 @@ class StudentInformationApp extends StatelessWidget {
               body: Center(child: CircularProgressIndicator()),
             );
           }
-          return snapshot.hasData ? const DashboardPage() : const LoginPage();
+          return snapshot.hasData ? const MainNavigation() : const LoginPage();
         },
       ),
     );
