@@ -28,9 +28,18 @@ class DashboardPage extends StatelessWidget {
             StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
               stream: students.snapshots(),
               builder: (context, snapshot) {
-                if (snapshot.hasError)
-                  return const Text('Unable to load student count.');
-                if (!snapshot.hasData) return const LinearProgressIndicator();
+                if (snapshot.hasError) {
+                  return const Card(
+                    child: Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Text('Unable to load student count.'),
+                    ),
+                  );
+                }
+                if (!snapshot.hasData) {
+                  return const LinearProgressIndicator();
+                }
+                final count = snapshot.data!.docs.length;
                 return Card(
                   child: Padding(
                     padding: const EdgeInsets.all(20),
