@@ -1,4 +1,4 @@
 {
-  "buildCommand": "git clone https://github.com/flutter/flutter.git -b stable _flutter && export PATH=\"$_flutter/bin:$PATH\" && flutter doctor && flutter build web --release",
+  "buildCommand": "git clone https://github.com/flutter/flutter.git -b stable _flutter && export PATH=\"$(pwd)/_flutter/bin:$PATH\" && flutter precache --web && flutter build web --release",
   "outputDirectory": "build/web"
 }
