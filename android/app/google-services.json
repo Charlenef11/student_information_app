@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "874703993617",
-    "project_id": "student-information-app-e8581",
-    "storage_bucket": "student-information-app-e8581.firebasestorage.app"
+    "project_number": "1027532424773",
+    "project_id": "pawcare-c3567",
+    "storage_bucket": "pawcare-c3567.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:874703993617:android:e1b839f60eeaba9c242ab0",
+        "mobilesdk_app_id": "1:1027532424773:android:06f1c47a27c6bc6490852c",
         "android_client_info": {
           "package_name": "com.example.student_information_app"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB3zOHZY9MQWAmpcctA4CIu6SyVFPjNIlQ"
+          "current_key": "AIzaSyBwcDsj0FXP3bbd_VWkM75FeBJUTAWHqtA"
         }
       ],
       "services": {

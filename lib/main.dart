@@ -1,24 +1,33 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:student_information_app/pages/main_navigation.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'firebase_options.dart';
-import 'pages/login_page.dart';
+import 'pages/login.dart';
+import 'pages/dashboard.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const StudentInformationApp());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(const PawCareApp());
 }
 
-class StudentInformationApp extends StatelessWidget {
-  const StudentInformationApp({super.key});
+class PawCareApp extends StatelessWidget {
+  const PawCareApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Student Information App',
+      title: 'PawCare Clinic Log',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorSchemeSeed: Colors.indigo, useMaterial3: true),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF00796B),
+          brightness: Brightness.light,
+        ),
+        useMaterial3: true,
+      ),
       home: StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
@@ -27,7 +36,10 @@ class StudentInformationApp extends StatelessWidget {
               body: Center(child: CircularProgressIndicator()),
             );
           }
-          return snapshot.hasData ? const MainNavigation() : const LoginPage();
+          if (snapshot.hasData) {
+            return const Dashboard();
+          }
+          return const LoginScreen();
         },
       ),
     );
